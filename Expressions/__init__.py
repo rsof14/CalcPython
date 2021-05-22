@@ -5,3 +5,4 @@ from .add_operation import AddOperation
 from .subtract_operation import SubtractOperation
 from .multiply_operation import MultiplyOperation
 from .divide_operation import DivideOperation
+from .modulo_operation import ModuloOperation

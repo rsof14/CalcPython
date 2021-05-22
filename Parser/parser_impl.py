@@ -16,6 +16,7 @@ from Expressions import (
     SubtractOperation,
     MultiplyOperation,
     DivideOperation,
+    ModuloOperation,
     NumberExpr
 )
 from .parser_error import ParserError
@@ -118,7 +119,7 @@ class TermParser:
         if pos == len(source):
             return left, pos
 
-        if source[pos] == '*' or source[pos] == '/':
+        if source[pos] == '*' or source[pos] == '/' or source[pos] == '%':
             op = source[pos]
             pos += 1
             pos = skip_spaces(source, pos)
@@ -131,6 +132,8 @@ class TermParser:
                 return MultiplyOperation(left, right), pos
             if op == '/':
                 return DivideOperation(left, right), pos
+            if op == '%':
+                return ModuloOperation(left, right), pos
 
             raise ProgrammerError("Invalid parser state")
 

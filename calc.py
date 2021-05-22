@@ -5,7 +5,8 @@ from Parser import (
 )
 
 def main():
-    print("Please, enter the mathematical expression containing floating point numbers, operations +, -, *, / or ():")
+    print("Please, enter the mathematical expression containing floating point numbers, operations +, -, *, /, % "
+          "or ():")
     expr = input("> ")
 
     parser = Parser(expr)
